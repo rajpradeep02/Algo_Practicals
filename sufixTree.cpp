@@ -18,7 +18,7 @@ public:
         root = new TrieNode();
     }
 
-    // Insert a suffix starting at position i
+    
     void insertSuffix(const string &text, int i) {
         TrieNode *curr = root;
         for (int j = i; j < text.length(); j++) {
@@ -30,13 +30,12 @@ public:
         curr->isEnd = true;
     }
 
-    // Build suffix trie (brute force)
     void buildSuffixTrie(const string &text) {
         for (int i = 0; i < text.length(); i++)
             insertSuffix(text, i);
     }
 
-    // Search pattern in the suffix trie
+    
     bool search(const string &pattern) {
         TrieNode *curr = root;
         for (char ch : pattern) {
