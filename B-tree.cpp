@@ -1,11 +1,10 @@
-// Write a program to implement a B-Tree.
 #include <iostream>
 using namespace std;
 
 class BTreeNode {
 public:
     int *keys;
-    int t;                // Minimum degree
+    int t;                
     BTreeNode **child;
     int n;
     bool leaf;
@@ -105,7 +104,7 @@ void BTreeNode::splitChild(int i, BTreeNode *y) {
 }
 
 int main() {
-    BTree tree(3); // B-tree of order 3
+    BTree tree(3); 
 
     tree.insert(10);
     tree.insert(20);
