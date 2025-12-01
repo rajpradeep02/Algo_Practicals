@@ -3,16 +3,15 @@ using namespace std;
 
 int partition(int arr[], int low, int high)
 {
-    int pivot = arr[high]; // pivot
-    int i = (low - 1);     // Index of smaller element
+    int pivot = arr[high]; 
+    int i = (low - 1);     
 
     for (int j = low; j <= high - 1; j++)
     {
-        // If current element is smaller than or
-        // equal to pivot
+        
         if (arr[j] <= pivot)
         {
-            i++; // increment index of smaller element
+            i++; 
             swap(arr[i], arr[j]);
         }
     }
@@ -24,9 +23,9 @@ void randomizedQuickSort(int arr[], int low, int high)
 {
     if (low < high)
     {
-        // Generate a random pivot index
+        
         int pivotIndex = low + rand() % (high - low + 1);
-        swap(arr[pivotIndex], arr[high]); // Move pivot to end
+        swap(arr[pivotIndex], arr[high]); 
 
         int partitionIndex = partition(arr, low, high);
         randomizedQuickSort(arr, low, partitionIndex - 1);
