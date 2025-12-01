@@ -1,4 +1,3 @@
-// Write a program to implement the Bellman-Ford algorithm to find the shortest paths from a given source node to all other nodes in a graph.
 
 #include <iostream>
 #include <vector>
@@ -13,7 +12,6 @@ void bellmanFord(int V, int E, vector<Edge>& edges, int src) {
 	vector<int> dist(V, INT_MAX);
 	dist[src] = 0;
 
-	// Relax all edges V-1 times
 	for (int i = 1; i < V; ++i) {
 		for (int j = 0; j < E; ++j) {
 			int u = edges[j].src;
@@ -25,7 +23,6 @@ void bellmanFord(int V, int E, vector<Edge>& edges, int src) {
 		}
 	}
 
-	// Check for negative-weight cyclesl
 	for (int j = 0; j < E; ++j) {
 		int u = edges[j].src;
 		int v = edges[j].dest;
